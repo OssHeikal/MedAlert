@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "776987817221",
+    "firebase_url": "https://smart-pill-b605c-default-rtdb.firebaseio.com",
+    "project_id": "smart-pill-b605c",
+    "storage_bucket": "smart-pill-b605c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776987817221:android:81160ce10dc4f3d942336c",
+        "android_client_info": {
+          "package_name": "com.smartpill.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776987817221-71or713tdfv0k408tcstcii7p083gv19.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX1JSYrzqk2v_00wXAkbUBaGLTdvB76Ag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776987817221-71or713tdfv0k408tcstcii7p083gv19.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "776987817221-lq46933mdma4pv1lappp2m2kiqcie93a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.smartpill.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

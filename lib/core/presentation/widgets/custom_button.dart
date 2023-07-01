@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_pill/core/resorces/values.dart';
+import 'package:smart_pill/core/resources/values.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -11,7 +11,7 @@ class CustomButton extends StatelessWidget {
     this.width,
     this.height,
     this.textColor,
-    this.horizontalMargin,
+    this.margin,
   });
   final String lable;
   final Function() onTap;
@@ -19,12 +19,12 @@ class CustomButton extends StatelessWidget {
   final Color? backgroundColor;
   final double? width;
   final double? height;
-  final double? horizontalMargin;
+  final EdgeInsets? margin;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: horizontalMargin ?? 0).w,
+      margin: margin,
       child: ElevatedButton(
         onPressed: onTap,
         style: ElevatedButton.styleFrom(

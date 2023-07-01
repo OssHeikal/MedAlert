@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+
 import 'package:smart_pill/core/presentation/widgets/custom_button.dart';
 import 'package:smart_pill/core/presentation/widgets/svg_image.dart';
-import 'package:smart_pill/core/resorces/assets.dart';
-import 'package:smart_pill/core/resorces/colors.dart';
-import 'package:smart_pill/core/resorces/routes.dart';
-import 'package:smart_pill/core/resorces/strings.dart';
-import 'package:smart_pill/core/resorces/values.dart';
+import 'package:smart_pill/core/resources/assets.dart';
+import 'package:smart_pill/core/resources/colors.dart';
+import 'package:smart_pill/core/resources/routes.dart';
+import 'package:smart_pill/core/resources/strings.dart';
+import 'package:smart_pill/core/resources/values.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({super.key});

@@ -1,4 +1,4 @@
-import 'package:smart_pill/core/resorces/strings.dart';
+import 'package:smart_pill/core/resources/strings.dart';
 
 class Validator {
   static String? validateField(String? value) {

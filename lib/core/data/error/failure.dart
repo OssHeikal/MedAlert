@@ -12,4 +12,10 @@ class NetworkFailure extends Failure {
   NetworkFailure({String? message}) : super(message: message);
 }
 
+class ServerFailure extends Failure {
+  ServerFailure({String? message}) : super(message: message);
+}
+
 class UnexpectedFailure extends Failure {}
+
+class NotificationFailure extends Failure {}

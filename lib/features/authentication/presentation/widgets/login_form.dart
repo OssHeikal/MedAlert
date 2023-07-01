@@ -5,10 +5,10 @@ import 'package:smart_pill/core/helpers/validator.dart';
 import 'package:smart_pill/core/presentation/widgets/custom_button.dart';
 import 'package:smart_pill/core/presentation/widgets/custom_input_field.dart';
 import 'package:smart_pill/core/presentation/widgets/custom_progress_indicator.dart';
-import 'package:smart_pill/core/resorces/colors.dart';
-import 'package:smart_pill/core/resorces/routes.dart';
-import 'package:smart_pill/core/resorces/strings.dart';
-import 'package:smart_pill/core/resorces/values.dart';
+import 'package:smart_pill/core/resources/colors.dart';
+import 'package:smart_pill/core/resources/routes.dart';
+import 'package:smart_pill/core/resources/strings.dart';
+import 'package:smart_pill/core/resources/values.dart';
 import 'package:smart_pill/core/utils/enums.dart';
 import 'package:smart_pill/features/authentication/presentation/controller/login/cubit/login_cubit.dart';
 
@@ -52,7 +52,7 @@ class LoginForm extends StatelessWidget {
       onTap: () => cubit.login(),
       lable: AppStrings.login,
       backgroundColor: AppColors.accent,
-      horizontalMargin: 14.w,
+      margin: AppMargin.mediumH.w,
     );
   }
 

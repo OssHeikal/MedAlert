@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_pill/core/resorces/colors.dart';
-import 'package:smart_pill/core/resorces/values.dart';
+import 'package:smart_pill/core/resources/colors.dart';
+import 'package:smart_pill/core/resources/values.dart';
 
 class SnackBarUtils {
   static void showSnackBar(BuildContext context, String message) {

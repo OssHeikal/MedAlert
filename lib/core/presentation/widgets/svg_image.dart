@@ -19,6 +19,7 @@ class SvgImage extends StatelessWidget {
       child: SvgPicture.asset(
         assetName,
         width: width,
+        height: width,
         fit: BoxFit.cover,
       ),
     );

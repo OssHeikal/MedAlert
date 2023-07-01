@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_pill/core/resorces/colors.dart';
+import 'package:smart_pill/core/resources/colors.dart';
 
 class CustomBackButton extends StatelessWidget {
   const CustomBackButton({

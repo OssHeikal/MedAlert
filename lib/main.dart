@@ -2,9 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_pill/core/resorces/router.dart';
-import 'package:smart_pill/core/resorces/theme.dart';
+import 'package:smart_pill/core/resources/router.dart';
+import 'package:smart_pill/core/resources/theme.dart';
 import 'package:smart_pill/core/services/bloc_observer.dart';
+import 'package:smart_pill/core/services/local_notification_services.dart';
 import 'package:smart_pill/core/services/service_locator.dart';
 
 Future<void> main() async {
@@ -12,6 +13,7 @@ Future<void> main() async {
   await Firebase.initializeApp();
   Bloc.observer = MyBlocObserver();
   ServiceLocator.init();
+  LocalNotificationServices.init(initSchedule: true);
   runApp(const MyApp());
 }
 

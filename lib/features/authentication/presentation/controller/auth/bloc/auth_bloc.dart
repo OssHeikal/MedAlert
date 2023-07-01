@@ -18,8 +18,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final GetUserProfileUseCase getUserProfileUseCase;
   final UserStateChangeUseCase userStateChangeUseCase;
 
-  // ignore: unused_field
-  late final StreamSubscription<User?> _userStateSubscription;
+  late final StreamSubscription<User?> userStateSubscription;
 
   AuthBloc(
     this.logoutUseCase,
@@ -30,8 +29,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthLogoutRequested>(_onLogoutRequested);
     on<UserProfileFetched>(_onUserProfileFetched);
 
-    _userStateSubscription =
-        userStateChangeUseCase().listen((user) => add(AuthChecked(user)));
+    userStateSubscription = userStateChangeUseCase().listen((user) {
+      add(AuthChecked(user));
+      if (user != null){
+        add(UserProfileFetched());
+      }
+    });
   }
 
   Future<FutureOr<void>> _onAuthChecked(
@@ -68,5 +71,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     } else {
       emit(state.copyWith(user: const UserProfile.empty()));
     }
+  }
+
+  String? getCurrentUserId() {
+    final user = getUserProfileUseCase();
+    return user?.uid;
   }
 }

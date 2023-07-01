@@ -2,25 +2,70 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_pill/core/resorces/routes.dart';
+import 'package:smart_pill/core/resources/routes.dart';
 import 'package:smart_pill/core/utils/enums.dart';
 import 'package:smart_pill/features/authentication/presentation/controller/auth/bloc/auth_bloc.dart';
 
 class RouteUtils {
-  final AuthBloc authBloc;
+  // final AuthBloc authBloc;
 
-  RouteUtils(this.authBloc);
+  // RouteUtils(this.authBloc);
 
-  String? handleRedirect(BuildContext context, GoRouterState state) {
+  // String? handleRedirect(BuildContext context, GoRouterState state) {
+  //   final isLoggedIn = authBloc.state.status == AppStatus.authenticated;
+  //   final isOnHomePage = state.location == AppRoutes.home.path;
+
+  //   if (isLoggedIn) {
+  //     return AppRoutes.home.path;
+  //   }
+
+  //   if (!isLoggedIn && isOnHomePage) {
+  //     return AppRoutes.welcome.path;
+  //   }
+
+  //   return null;
+  // }
+
+  // static String? handleRedirect(
+  //   AuthBloc authBloc,
+  //   BuildContext context,
+  //   GoRouterState state,
+  // ) {
+  //   final isLoggedIn = authBloc.state.status == AppStatus.authenticated;
+  //   final isOnWelcomePage = state.location == AppRoutes.welcome.path;
+  //   final isOnLoginPage = state.location == AppRoutes.login.path;
+  //   final isOnRegisterPage = state.location == AppRoutes.register.path;
+
+  //   if (isLoggedIn && isOnWelcomePage) {
+  //     return AppRoutes.home.path;
+  //   }
+
+  //   if (!isLoggedIn && !isOnWelcomePage) {
+  //     return AppRoutes.welcome.path;
+  //   }
+
+  //   return null;
+  // }
+
+  static String? handleRedirect(
+    AuthBloc authBloc,
+    BuildContext context,
+    GoRouterState state,
+  ) {
     final isLoggedIn = authBloc.state.status == AppStatus.authenticated;
-    final isOnHomePage = state.location == AppRoutes.home.path;
+    final isOnWelcomePage = state.location == AppRoutes.welcome.path;
+    final isOnLoginPage = state.matchedLocation.contains(AppRoutes.login.path);
+    final isOnRegisterPage =
+        state.matchedLocation.contains(AppRoutes.register.path);
 
     if (isLoggedIn) {
-      return AppRoutes.home.path;
-    }
-
-    if (!isLoggedIn && isOnHomePage) {
-      return AppRoutes.welcome.path;
+      if (isOnWelcomePage || isOnLoginPage || isOnRegisterPage) {
+        return AppRoutes.home.path;
+      }
+    } else {
+      if (!isOnWelcomePage && !isOnLoginPage && !isOnRegisterPage) {
+        return AppRoutes.welcome.path;
+      }
     }
 
     return null;

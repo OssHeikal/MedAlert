@@ -3,7 +3,7 @@ enum AppRoutes {
   login,
   register,
   home,
-  profile,
+  setting,
   notification,
 }
 
@@ -18,10 +18,10 @@ extension AppRoutesX on AppRoutes {
         return 'register';
       case AppRoutes.home:
         return '/home';
-      case AppRoutes.profile:
-        return 'profile';
+      case AppRoutes.setting:
+        return 'setting';
       case AppRoutes.notification:
-        return 'add_dispenser';
+        return 'notification';
       default:
         return '/welcome';
     }
@@ -37,10 +37,10 @@ extension AppRoutesX on AppRoutes {
         return 'Register';
       case AppRoutes.home:
         return 'Home';
-      case AppRoutes.profile:
-        return 'Profile';
+      case AppRoutes.setting:
+        return 'setting';
       case AppRoutes.notification:
-        return 'add_dispenser';
+        return 'notification';
       default:
         return 'Welcome';
     }

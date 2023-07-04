@@ -96,10 +96,12 @@ class AppWidth {
   static const double w10 = 10;
   static const double w12 = 12;
   static const double w16 = 16;
+  static const double w20 = 20;
   static const double w24 = 24;
   static const double w32 = 32;
   static const double w40 = 40;
   static const double w48 = 48;
+  static const double w52 = 52;
   static const double w64 = 64;
   static const double w72 = 72;
   static const double w80 = 80;
@@ -113,6 +115,34 @@ class AppWidth {
   static const double w300 = 300;
 
   static get screenWidth => ScreenUtil().screenWidth;
+}
+
+class AppSize {
+  static const double s0 = 0;
+  static const double s1 = 1;
+  static const double s2 = 2;
+  static const double s4 = 4;
+  static const double s6 = 6;
+  static const double s8 = 8;
+  static const double s10 = 10;
+  static const double s12 = 12;
+  static const double s16 = 16;
+  static const double s20 = 20;
+  static const double s24 = 24;
+  static const double s32 = 32;
+  static const double s40 = 40;
+  static const double s48 = 48;
+  static const double s64 = 64;
+  static const double s72 = 72;
+  static const double s80 = 80;
+  static const double s100 = 100;
+  static const double s120 = 120;
+  static const double s126 = 126;
+  static const double s150 = 150;
+  static const double s200 = 200;
+  static const double s220 = 220;
+  static const double s250 = 250;
+  static const double s300 = 300;
 }
 
 class AppBorderRadius {

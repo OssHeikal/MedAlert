@@ -10,6 +10,8 @@ class AppMessages {
   static const String noInternetConnection =
       'No internet connection. Please check your network settings and try again.';
 
+  static const String failedToLoadMedicines = 'Failed to load medicines.';
+
   static String getMedicineNotificationMessage(
       int dose, String medicineName, String medicineType) {
     return 'It\'s time to take $dose $medicineType of $medicineName.';

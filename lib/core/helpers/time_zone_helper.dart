@@ -1,12 +1,11 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:med_alert/core/helpers/date_time_formatter.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
 
 class TimeZoneHelper {
   static Future<void> init() async {
     tz.initializeTimeZones();
-    // final location = await FlutterNativeTimezone.getLocalTimezone();
-    // tz.setLocalLocation(tz.getLocation(location));
   }
 
   static tz.TZDateTime convertDateTimeToTimeZone(
@@ -26,11 +25,25 @@ class TimeZoneHelper {
         : tz.TZDateTime.from(scheduledDate, tz.local);
   }
 
-  static tz.TZDateTime scheduleWeekly(Time time, {required int weekday}) {
+  static tz.TZDateTime scheduleWeekly(Time time, {required List<int> weekday}) {
     tz.TZDateTime scheduledDate = scheduleDaily(time);
-    while (scheduledDate.weekday != weekday) {
+    while (!weekday.contains(scheduledDate.weekday)) {
       scheduledDate = scheduledDate.add(const Duration(days: 1));
     }
     return scheduledDate;
+  }
+
+  static List<tz.TZDateTime> scheduleMultipleWeekly(
+    List<String> times,
+    List<int> weekdays,
+  ) {
+    final scheduledDates = <tz.TZDateTime>[];
+    for (final time in times) {
+      final formattedTime = DateTimeFormatter.formatTimeOfDay(time);
+      final Time scheduledTime = Time(formattedTime.hour, formattedTime.minute);
+      final scheduledDate = scheduleWeekly(scheduledTime, weekday: weekdays);
+      scheduledDates.add(scheduledDate);
+    }
+    return scheduledDates;
   }
 }

@@ -1,13 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:smart_pill/core/data/error/failure.dart';
-import 'package:smart_pill/features/medicine/domain/entities/despinser.dart';
+import 'package:med_alert/core/data/error/failure.dart';
+import 'package:med_alert/features/medicine/domain/entities/medicine_schedule.dart';
 
 abstract class MedicineRepository {
-  Future<Either<Failure, Unit>> addDispenser(Dispenser dispenser);
-  Future<Either<Failure, Unit>> deleteDispenser(String dispenserId);
-  Stream<List<Dispenser>> getDispensersStream(String patientId);
-  Future<Either<Failure, Unit>> addDispenserToRealTimeDatabase(
-      Dispenser dispenser);
-  Future<Either<Failure, Unit>> deleteDispenserToRealTimeDatabase(
-      String dispenserIndex);
+  Future<Either<Failure, Unit>> addMedicineSchedule(MedicineSchedule dispenser);
+  Future<Either<Failure, Unit>> deleteMedicineSchedule(String dispenserId);
+  Stream<List<MedicineSchedule>> getAllMedicinesStream(String patientId);
 }

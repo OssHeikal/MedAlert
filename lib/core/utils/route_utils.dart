@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_pill/core/resources/routes.dart';
-import 'package:smart_pill/core/utils/enums.dart';
-import 'package:smart_pill/features/authentication/presentation/controller/auth/bloc/auth_bloc.dart';
+import 'package:med_alert/core/resources/routes.dart';
+import 'package:med_alert/core/utils/enums.dart';
+import 'package:med_alert/features/authentication/presentation/controller/auth/bloc/auth_bloc.dart';
 
 class RouteUtils {
   // final AuthBloc authBloc;

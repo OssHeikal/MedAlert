@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_pill/core/resources/values.dart';
+import 'package:med_alert/core/resources/values.dart';
 
 class DayTimeList extends StatelessWidget {
   const DayTimeList({

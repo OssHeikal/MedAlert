@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_pill/core/presentation/widgets/custom_card_tile.dart';
-import 'package:smart_pill/core/presentation/widgets/medicine_icon_card.dart';
-import 'package:smart_pill/core/resources/colors.dart';
-import 'package:smart_pill/core/resources/values.dart';
-import 'package:smart_pill/core/utils/extensions.dart';
-import 'package:smart_pill/features/medicine/domain/entities/medicine.dart';
+import 'package:med_alert/core/presentation/widgets/custom_card_tile.dart';
+import 'package:med_alert/core/presentation/widgets/medicine_icon_card.dart';
+import 'package:med_alert/core/resources/colors.dart';
+import 'package:med_alert/core/resources/values.dart';
+import 'package:med_alert/core/utils/extensions.dart';
+import 'package:med_alert/features/medicine/domain/entities/medicine.dart';
 
 class MedicineTile extends StatelessWidget {
   const MedicineTile({

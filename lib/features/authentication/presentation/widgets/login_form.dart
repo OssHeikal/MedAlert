@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_pill/core/helpers/validator.dart';
-import 'package:smart_pill/core/presentation/widgets/custom_button.dart';
-import 'package:smart_pill/core/presentation/widgets/custom_input_field.dart';
-import 'package:smart_pill/core/presentation/widgets/custom_progress_indicator.dart';
-import 'package:smart_pill/core/resources/colors.dart';
-import 'package:smart_pill/core/resources/routes.dart';
-import 'package:smart_pill/core/resources/strings.dart';
-import 'package:smart_pill/core/resources/values.dart';
-import 'package:smart_pill/core/utils/enums.dart';
-import 'package:smart_pill/features/authentication/presentation/controller/login/cubit/login_cubit.dart';
+import 'package:med_alert/core/helpers/validator.dart';
+import 'package:med_alert/core/presentation/widgets/custom_button.dart';
+import 'package:med_alert/core/presentation/widgets/custom_input_field.dart';
+import 'package:med_alert/core/presentation/widgets/custom_progress_indicator.dart';
+import 'package:med_alert/core/resources/colors.dart';
+import 'package:med_alert/core/resources/routes.dart';
+import 'package:med_alert/core/resources/strings.dart';
+import 'package:med_alert/core/resources/values.dart';
+import 'package:med_alert/core/utils/enums.dart';
+import 'package:med_alert/features/authentication/presentation/controller/login/cubit/login_cubit.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({

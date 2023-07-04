@@ -1,4 +1,4 @@
-import 'package:smart_pill/features/medicine/domain/entities/schedule.dart';
+import 'package:med_alert/features/medicine/domain/entities/schedule.dart';
 
 class NotificationData {
   NotificationData({

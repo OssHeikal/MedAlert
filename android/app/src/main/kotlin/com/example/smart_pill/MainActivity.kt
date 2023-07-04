@@ -1,4 +1,4 @@
-package com.example.smart_pill
+package com.example.MedAlert
 
 import io.flutter.embedding.android.FlutterActivity
 

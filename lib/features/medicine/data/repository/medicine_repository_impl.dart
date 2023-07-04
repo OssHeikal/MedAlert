@@ -1,23 +1,19 @@
 import 'package:dartz/dartz.dart';
 
-import 'package:smart_pill/core/data/error/failure.dart';
-import 'package:smart_pill/features/medicine/data/datasource/remote/medicine_realtime_datasource.dart';
-import 'package:smart_pill/features/medicine/data/datasource/remote/medicine_remote_datasource.dart';
-import 'package:smart_pill/features/medicine/domain/entities/despinser.dart';
-import 'package:smart_pill/features/medicine/domain/repositories/medicine_repository.dart';
+import 'package:med_alert/core/data/error/failure.dart';
+import 'package:med_alert/features/medicine/data/datasource/remote/medicine_remote_datasource.dart';
+import 'package:med_alert/features/medicine/domain/entities/medicine_schedule.dart';
+import 'package:med_alert/features/medicine/domain/repositories/medicine_repository.dart';
 
 class MedicineRepositoryImpl extends MedicineRepository {
-  MedicineRepositoryImpl(
-    this.remoteDataSource,
-    this.realTimeDataSource,
-  );
+  MedicineRepositoryImpl(this.remoteDataSource);
   final MedicineRemoteDataSource remoteDataSource;
-  final MedicineRealTimeDataSource realTimeDataSource;
 
   @override
-  Future<Either<Failure, Unit>> addDispenser(Dispenser dispenser) async {
+  Future<Either<Failure, Unit>> addMedicineSchedule(
+      MedicineSchedule dispenser) async {
     try {
-      await remoteDataSource.addDispenser(dispenser);
+      await remoteDataSource.addMedicineSchedule(dispenser);
       return right(unit);
     } catch (e) {
       return left(ServerFailure());
@@ -25,37 +21,15 @@ class MedicineRepositoryImpl extends MedicineRepository {
   }
 
   @override
-  Stream<List<Dispenser>> getDispensersStream(String patientId) {
-    return remoteDataSource.getDispensersStream(patientId);
+  Stream<List<MedicineSchedule>> getAllMedicinesStream(String patientId) {
+    return remoteDataSource.getAllMedicinesStream(patientId);
   }
 
   @override
-  Future<Either<Failure, Unit>> addDispenserToRealTimeDatabase(
-      Dispenser dispenser) async {
+  Future<Either<Failure, Unit>> deleteMedicineSchedule(
+      String dispenserId) async {
     try {
-      await realTimeDataSource.addDispenserToRealTimeDatabase(dispenser);
-      return right(unit);
-    } catch (e) {
-      return left(ServerFailure());
-    }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> deleteDispenser(String dispenserId) async {
-    try {
-      await remoteDataSource.deleteDispenser(dispenserId);
-      return right(unit);
-    } catch (e) {
-      return left(ServerFailure());
-    }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> deleteDispenserToRealTimeDatabase(
-      String dispenserIndex) async {
-    try {
-      await realTimeDataSource
-          .deleteDispenserFromRealTimeDatabase(dispenserIndex);
+      await remoteDataSource.deleteMedicineSchedule(dispenserId);
       return right(unit);
     } catch (e) {
       return left(ServerFailure());

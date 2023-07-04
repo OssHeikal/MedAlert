@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:smart_pill/core/resources/colors.dart';
-import 'package:smart_pill/core/resources/values.dart';
+import 'package:med_alert/core/resources/colors.dart';
+import 'package:med_alert/core/resources/values.dart';
 
 class AppTheme {
   static ThemeData getThemeData() {
@@ -75,12 +75,12 @@ class AppTheme {
       // App bar theme
       appBarTheme: AppBarTheme(
         elevation: 0,
-        backgroundColor: AppColors.backgroundPrimary,
+        backgroundColor: AppColors.backgroundSecondary,
         iconTheme: IconThemeData(size: 24.sp),
         titleTextStyle: TextStyle(
           color: AppColors.textPrimary,
-          fontSize: AppFontSize.f20.sp,
-          fontWeight: FontWeight.w600,
+          fontSize: AppFontSize.f16.sp,
+          fontWeight: FontWeight.w500,
         ),
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,

@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:smart_pill/core/data/error/failure.dart';
-import 'package:smart_pill/features/medicine/domain/entities/schedule.dart';
-import 'package:smart_pill/features/notifications/data/datasource/local/notification_datasource.dart';
-import 'package:smart_pill/features/notifications/domain/repository/notification_repository.dart';
+import 'package:med_alert/core/data/error/failure.dart';
+import 'package:med_alert/features/medicine/domain/entities/schedule.dart';
+import 'package:med_alert/features/notifications/data/datasource/local/notification_datasource.dart';
+import 'package:med_alert/features/notifications/domain/entities/notification.dart';
+import 'package:med_alert/features/notifications/domain/repository/notification_repository.dart';
 
 class NotificationRepositoryImpl extends NotificationRepository {
   NotificationRepositoryImpl(this.localNotificationDataSource);
@@ -10,14 +11,10 @@ class NotificationRepositoryImpl extends NotificationRepository {
 
   @override
   Future<Either<Failure, Unit>> scheduleWeeklyNotification(
-    int id,
-    String title,
-    String body,
-    Schedule schedule,
-  ) async {
+      NotificationData notificationData) async {
     try {
-      await localNotificationDataSource.scheduleWeeklyNotification(
-          id, title, body, schedule);
+      await localNotificationDataSource
+          .scheduleWeeklyNotification(notificationData);
       return right(unit);
     } catch (e) {
       return left(NotificationFailure());
@@ -25,9 +22,10 @@ class NotificationRepositoryImpl extends NotificationRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> cancelNotification(int id) async {
+  Future<Either<Failure, Unit>> cancelNotification(
+      int id, Schedule schedule) async {
     try {
-      await localNotificationDataSource.cancelNotification(id);
+      await localNotificationDataSource.cancelNotification(id, schedule);
       return right(unit);
     } catch (e) {
       return left(NotificationFailure());

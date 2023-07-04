@@ -2,17 +2,17 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:smart_pill/core/helpers/date_time_formatter.dart';
-import 'package:smart_pill/features/medicine/domain/entities/despinser.dart';
-import 'package:smart_pill/features/medicine/domain/entities/medicine.dart';
-import 'package:smart_pill/features/medicine/presentation/controller/all_dispensers/bloc/all_dispensers_bloc.dart';
-import 'package:smart_pill/features/medicine/presentation/controller/calendar/cubit/calendar_cubit.dart';
+import 'package:med_alert/core/helpers/date_time_formatter.dart';
+import 'package:med_alert/features/medicine/domain/entities/medicine_schedule.dart';
+import 'package:med_alert/features/medicine/domain/entities/medicine.dart';
+import 'package:med_alert/features/medicine/presentation/controller/all_medicines_schedule/bloc/all_medicines_schedule_bloc.dart';
+import 'package:med_alert/features/calendar/presentation/controller/cubit/calendar_cubit.dart';
 
 part 'medicine_state.dart';
 
 class MedicineCubit extends Cubit<MedicineState> {
-  final AllDispensersBloc allDispensersBloc;
-  late StreamSubscription<AllDispensersState> allDispensersSubscription;
+  final AllMedicinesScheduleBloc allDispensersBloc;
+  late StreamSubscription<AllMedicinesScheduleState> allDispensersSubscription;
 
   final CalendarCubit calendarCubit;
   late StreamSubscription<DateTime> calendarSubscription;
@@ -31,10 +31,10 @@ class MedicineCubit extends Cubit<MedicineState> {
   }
 
   void getMedicinesForCurrentWeekday(
-      List<Dispenser> dispensers, int currentWeekday) {
+      List<MedicineSchedule> dispensers, int currentWeekday) {
     List<Medicine> medicines = [];
 
-    for (final Dispenser dispenser in dispensers) {
+    for (final MedicineSchedule dispenser in dispensers) {
       if (dispenser.schedule.days.contains(currentWeekday)) {
         for (final time in dispenser.schedule.times) {
           medicines.add(

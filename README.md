@@ -1,4 +1,4 @@
-# smart_pill
+# MedAlert
 
 A new Flutter project.
 

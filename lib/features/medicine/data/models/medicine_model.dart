@@ -1,4 +1,4 @@
-import 'package:smart_pill/features/medicine/domain/entities/medicine.dart';
+import 'package:med_alert/features/medicine/domain/entities/medicine.dart';
 
 class MedicineModel extends Medicine {
   const MedicineModel({
@@ -18,13 +18,4 @@ class MedicineModel extends Medicine {
         // weekday: json["weekday"],
         // status: json["status"],
       );
-
-  Map<String, dynamic> toJson() => {
-        "name": name,
-        "type": type,
-        "dose": dose,
-        "time": time,
-        // "weekday": weekday,
-        // "status": status,
-      };
 }

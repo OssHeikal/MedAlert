@@ -28,10 +28,6 @@ class AppStrings {
   // Medicine
   static const String noMedicines = 'No medicines for this day';
   static const String noDispensers = 'No dispensers available';
-
-  static String generateDispenserId(String patientId, String index) {
-    return 'DIS-$index-$patientId';
-  }
 }
 
 class ValidationMessages {

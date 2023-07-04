@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:smart_pill/core/data/error/failure.dart';
-import 'package:smart_pill/core/domain/usecase/usecase.dart';
-import 'package:smart_pill/features/authentication/domain/repositories/auth_repository.dart';
+import 'package:med_alert/core/data/error/failure.dart';
+import 'package:med_alert/core/domain/usecase/usecase.dart';
+import 'package:med_alert/features/authentication/domain/repositories/auth_repository.dart';
 
 class LogoutUseCase extends UseCase<Unit, NoParams> {
   LogoutUseCase(this.repository);

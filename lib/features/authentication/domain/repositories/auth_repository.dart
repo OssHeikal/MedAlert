@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:smart_pill/core/data/error/failure.dart';
-import 'package:smart_pill/features/authentication/domain/entities/user_profile.dart';
+import 'package:med_alert/core/data/error/failure.dart';
+import 'package:med_alert/features/authentication/domain/entities/user_profile.dart';
 
 abstract class AuthRepository {
   User getUserProfile();

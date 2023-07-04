@@ -16,9 +16,10 @@ class WeeklyNotificationScheduled extends NotificationEvent {
 }
 
 class NotificationCanceled extends NotificationEvent {
-  const NotificationCanceled({required this.notificationId});
+  const NotificationCanceled({required this.id, required this.schedule});
 
-  final int notificationId;
+  final int id;
+  final Schedule schedule;
   @override
-  List<Object> get props => [notificationId];
+  List<Object> get props => [id, schedule];
 }

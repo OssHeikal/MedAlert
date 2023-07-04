@@ -1,5 +1,6 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:smart_pill/core/helpers/time_zone_helper.dart';
+import 'package:med_alert/core/helpers/id_generator.dart';
+import 'package:med_alert/core/helpers/time_zone_helper.dart';
 import 'package:timezone/timezone.dart' as tz;
 
 class LocalNotificationServices {
@@ -32,22 +33,31 @@ class LocalNotificationServices {
     int id,
     String title,
     String body,
-    tz.TZDateTime scheduledDate,
+    List<tz.TZDateTime> scheduledDates,
   ) async {
     final notificationDetails = await getNotificationDetails();
-    await notification.zonedSchedule(
-      id,
-      title,
-      body,
-      scheduledDate,
-      notificationDetails,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
-      matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
-    );
+    for (final date in scheduledDates) {
+      final notificationId = IdGenerator.generateNotificationId(id, date);
+      await notification.zonedSchedule(
+        notificationId,
+        title,
+        body,
+        date,
+        notificationDetails,
+        uiLocalNotificationDateInterpretation:
+            UILocalNotificationDateInterpretation.absoluteTime,
+        matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
+      );
+    }
   }
 
-  static Future<void> cancelNotification(int id) async {
-    await notification.cancel(id);
+  static Future<void> cancelNotification(
+    int id,
+    List<tz.TZDateTime> scheduledDates,
+  ) async {
+    for (final date in scheduledDates) {
+      final notificationId = IdGenerator.generateNotificationId(id, date);
+      await notification.cancel(notificationId);
+    }
   }
 }

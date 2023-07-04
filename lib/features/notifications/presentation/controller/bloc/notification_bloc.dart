@@ -2,9 +2,10 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:smart_pill/features/notifications/domain/entities/notification.dart';
-import 'package:smart_pill/features/notifications/domain/usecases/cancel_notificiation_usecase.dart';
-import 'package:smart_pill/features/notifications/domain/usecases/schedule_weekly_notification_usecase.dart';
+import 'package:med_alert/features/medicine/domain/entities/schedule.dart';
+import 'package:med_alert/features/notifications/domain/entities/notification.dart';
+import 'package:med_alert/features/notifications/domain/usecases/cancel_notificiation_usecase.dart';
+import 'package:med_alert/features/notifications/domain/usecases/schedule_weekly_notification_usecase.dart';
 
 part 'notification_event.dart';
 part 'notification_state.dart';
@@ -34,7 +35,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   FutureOr<void> _onNotificationCanceled(
       NotificationCanceled event, Emitter<NotificationState> emit) async {
     emit(state.copyWith(status: NotificationStatus.canceling));
-    final result = await cancelNotificationUseCase(event.notificationId);
+    final result = await cancelNotificationUseCase(event.id, event.schedule);
     result.fold(
       (failure) => emit(state.copyWith(status: NotificationStatus.failure)),
       (_) => emit(state.copyWith(status: NotificationStatus.canceled)),

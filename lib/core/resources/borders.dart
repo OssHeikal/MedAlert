@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_pill/core/resources/colors.dart';
+import 'package:med_alert/core/resources/colors.dart';
 
 class AppBorders {
   static const borderDirectionalMiddel = BorderDirectional(

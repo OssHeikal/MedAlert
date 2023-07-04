@@ -22,6 +22,7 @@ class MedicineTextField extends StatelessWidget {
       style: textTheme.bodyMedium,
       textAlign: textAlign,
       keyboardType: keyboardType,
+      textCapitalization: TextCapitalization.words,
       decoration: InputDecoration(
         fillColor: Colors.transparent,
         border: InputBorder.none,

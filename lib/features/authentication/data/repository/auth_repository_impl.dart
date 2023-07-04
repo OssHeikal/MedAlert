@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:smart_pill/core/data/error/exceptions.dart';
-import 'package:smart_pill/core/data/error/failure.dart';
-import 'package:smart_pill/core/resources/messages.dart';
-import 'package:smart_pill/features/authentication/data/datasource/auth_datasource.dart';
-import 'package:smart_pill/features/authentication/domain/entities/user_profile.dart';
-import 'package:smart_pill/features/authentication/domain/repositories/auth_repository.dart';
+import 'package:med_alert/core/data/error/exceptions.dart';
+import 'package:med_alert/core/data/error/failure.dart';
+import 'package:med_alert/core/resources/messages.dart';
+import 'package:med_alert/features/authentication/data/datasource/auth_datasource.dart';
+import 'package:med_alert/features/authentication/domain/entities/user_profile.dart';
+import 'package:med_alert/features/authentication/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl(this.authDataSourceImpl);

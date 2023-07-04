@@ -1,4 +1,4 @@
-import 'package:smart_pill/features/authentication/domain/entities/user_profile.dart';
+import 'package:med_alert/features/authentication/domain/entities/user_profile.dart';
 
 class UserModel extends UserProfile {
   const UserModel({

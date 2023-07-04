@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_pill/core/resources/assets.dart';
-import 'package:smart_pill/core/resources/colors.dart';
-import 'package:smart_pill/core/utils/enums.dart';
+import 'package:med_alert/core/resources/assets.dart';
+import 'package:med_alert/core/resources/colors.dart';
+import 'package:med_alert/core/utils/enums.dart';
 
 extension MedicineTypeX on MedicineType {
   String get name {

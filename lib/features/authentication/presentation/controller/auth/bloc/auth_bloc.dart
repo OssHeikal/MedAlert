@@ -3,12 +3,12 @@ import 'dart:async';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_pill/core/domain/usecase/usecase.dart';
-import 'package:smart_pill/core/utils/enums.dart';
-import 'package:smart_pill/features/authentication/domain/entities/user_profile.dart';
-import 'package:smart_pill/features/authentication/domain/usecases/get_user_profile_usecase.dart';
-import 'package:smart_pill/features/authentication/domain/usecases/user_state_change_usecase.dart';
-import 'package:smart_pill/features/authentication/domain/usecases/logout_usecase.dart';
+import 'package:med_alert/core/domain/usecase/usecase.dart';
+import 'package:med_alert/core/utils/enums.dart';
+import 'package:med_alert/features/authentication/domain/entities/user_profile.dart';
+import 'package:med_alert/features/authentication/domain/usecases/get_user_profile_usecase.dart';
+import 'package:med_alert/features/authentication/domain/usecases/user_state_change_usecase.dart';
+import 'package:med_alert/features/authentication/domain/usecases/logout_usecase.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -31,7 +31,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     userStateSubscription = userStateChangeUseCase().listen((user) {
       add(AuthChecked(user));
-      if (user != null){
+      if (user != null) {
         add(UserProfileFetched());
       }
     });

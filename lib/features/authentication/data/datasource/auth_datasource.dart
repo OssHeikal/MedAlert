@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:smart_pill/core/data/error/exceptions.dart';
-import 'package:smart_pill/core/data/remote/network_connection.dart';
+import 'package:med_alert/core/data/error/exceptions.dart';
+import 'package:med_alert/core/data/remote/network_connection.dart';
 
 abstract class AuthDataSource {
   User getUserProfile();

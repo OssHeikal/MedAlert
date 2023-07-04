@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_pill/core/presentation/widgets/custom_back_button.dart';
-import 'package:smart_pill/core/services/service_locator.dart';
-import 'package:smart_pill/features/medicine/domain/entities/schedule.dart';
-import 'package:smart_pill/features/notifications/domain/repository/notification_repository.dart';
+import 'package:med_alert/core/presentation/widgets/custom_back_button.dart';
 
 class NotificationsView extends StatelessWidget {
   const NotificationsView({super.key});
@@ -19,19 +16,30 @@ class NotificationsView extends StatelessWidget {
             child: Text('Notifications'),
           ),
           ElevatedButton(
-              onPressed: () {
-                sl<NotificationRepository>().scheduleWeeklyNotification(
-                  0,
-                  'Medication Time',
-                  'Time to take your medicine',
-                  Schedule(
-                    time: DateTime.now().add(const Duration(seconds: 15)),
-                    days: const [DateTime.thursday],
-                    times: const [],
-                  ),
-                );
-              },
-              child: const Text('send notification'))
+            onPressed: () {
+              // sl<NotificationRepository>().scheduleWeeklyNotification(
+              //   0,
+              //   'Medication Time',
+              //   'Time to take your medicine',
+              //   const Schedule(
+              //     days: [DateTime.sunday, DateTime.monday],
+              //     times: ['08:56 PM', '08:57 PM'],
+              //   ),
+              // );
+            },
+            child: const Text('send notification'),
+          ),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     sl<NotificationRepository>().cancelNotification(
+          //       const Schedule(
+          //         days: [DateTime.sunday, DateTime.monday],
+          //         times: ['08:55 PM', '05:56 PM'],
+          //       ),
+          //     );
+          //   },
+          //   child: const Text('cancel notification'),
+          // ),
         ],
       ),
     );

@@ -18,22 +18,39 @@ MedAlert is a simple Flutter application designed to help users manage their med
 - **Weekly Activity**: The app provides users with a convenient weekly overview of their medication activity, allowing them to track their progress and adherence.
 - **Notification Reminders**: MedAlert sends timely notifications to remind users to take their medications according to their specified schedules.
 
-## Technologies Used
+## Packages Used
 
-- **Firebase Auth**: Firebase Authentication is integrated into MedAlert for secure user authentication and authorization.
-- **Firebase Firestore**: MedAlert utilizes Firebase Firestore as its database solution to store and retrieve medication data.
-- **Flutter Local Notification**: The [Flutter Local Notification](https://pub.dev/packages/flutter_local_notifications) package is employed for scheduling and delivering notifications to users.
-- **Go Router**: Go Router is used for efficient routing within the application, enabling seamless navigation between screens.
-- **Dartz**: Dartz library aids in handling errors effectively, ensuring a robust user experience.
-- **Flutter Screen Utils**: MedAlert utilizes Flutter Screen Utils to create a responsive user interface across various screen sizes.
-- **Get It**: Get It serves as a service locator to manage dependencies within the app.
-- **BLoC**: BLoC (Business Logic Component) is adopted as the state management solution for MedAlert, facilitating separation of concerns and maintainability.
-- **Clean Code Architecture**: MedAlert follows the Clean Code architecture pattern, promoting code organization, testability, and maintainability.
-
+- [Firebase Auth](https://pub.dev/packages/firebase_auth)
+- [Firebase Firestore](https://pub.dev/packages/cloud_firestore)
+- [Flutter Local Notification](https://pub.dev/packages/flutter_local_notifications)
+- [Go Router](https://pub.dev/packages/go_router)
+- [Dartz](https://pub.dev/packages/dartz)
+- [Flutter Screen Utils](https://pub.dev/packages/flutter_screenutil)
+- [Get It](https://pub.dev/packages/get_it)
+- [BLoC](https://pub.dev/packages/flutter_bloc)
+- [Equatable](https://pub.dev/packages/equatable)
+- 
 ## Installation
 
 To run MedAlert locally, follow these steps:
 
 1. Clone the repository:
    ```shell
-   git clone [repository-url]
+   git clone https://github.com/OssHeikal/MedAlert.git
+
+2. Navigate to the project directory:
+   ```shell
+   cd MedAlert
+   
+3. Install dependencies:
+   ```shell
+   flutter pub get
+      
+4. Run the app: 
+   ```shell
+   flutter run
+
+## Contributing
+
+Contributions to MedAlert are welcome! If you encounter any issues or have suggestions for improvement, please submit a bug report or a feature request via the issue tracker. You can also fork the repository, make your changes, and submit a pull request.
+

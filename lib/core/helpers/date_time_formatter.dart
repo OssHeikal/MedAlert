@@ -41,7 +41,6 @@ class DateTimeFormatter {
 
   static String getWeekDayNames(List<int> weekdays) {
     weekdays.sort();
-    print(weekdays);
     if (weekdays.length == 7) {
       return 'Every day';
     } else if (weekdays.length == 5 &&

@@ -4,7 +4,6 @@ enum AppRoutes {
   register,
   home,
   setting,
-  notification,
 }
 
 extension AppRoutesX on AppRoutes {
@@ -20,8 +19,6 @@ extension AppRoutesX on AppRoutes {
         return '/home';
       case AppRoutes.setting:
         return 'setting';
-      case AppRoutes.notification:
-        return 'notification';
       default:
         return '/welcome';
     }
@@ -39,8 +36,6 @@ extension AppRoutesX on AppRoutes {
         return 'Home';
       case AppRoutes.setting:
         return 'setting';
-      case AppRoutes.notification:
-        return 'notification';
       default:
         return 'Welcome';
     }

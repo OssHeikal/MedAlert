@@ -9,7 +9,6 @@ import 'package:med_alert/core/utils/route_utils.dart';
 import 'package:med_alert/features/authentication/presentation/controller/auth/bloc/auth_bloc.dart';
 import 'package:med_alert/features/authentication/presentation/view/login_view.dart';
 import 'package:med_alert/features/authentication/presentation/view/register_view.dart';
-import 'package:med_alert/features/notifications/presentation/view/notification_view.dart';
 
 class AppRouter {
   final AuthBloc authBloc;
@@ -46,12 +45,6 @@ class AppRouter {
           pageBuilder: (context, state) =>
               NoTransitionPage(child: HomeView(authBloc: authBloc)),
           routes: [
-            GoRoute(
-              path: AppRoutes.notification.path,
-              name: AppRoutes.notification.name,
-              pageBuilder: (context, state) =>
-                  const NoTransitionPage(child: NotificationsView()),
-            ),
             GoRoute(
               path: AppRoutes.setting.path,
               name: AppRoutes.setting.name,

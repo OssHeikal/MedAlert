@@ -176,7 +176,7 @@ class MedicineForm extends StatelessWidget {
     final notificationBloc = context.read<NotificationBloc>();
     return CustomButton(
       height: AppHeight.h40.h,
-      lable: 'Add Dispenser',
+      lable: 'Add Medcine',
       margin: AppMargin.medium.w,
       backgroundColor: AppColors.accent,
       onTap: () {
